@@ -12,8 +12,11 @@
 </svelte:head>
 
 <section>
-	<p>The number is {num}</p>
-	<button on:click={increment}>Click me</button>
+	<p class="m-8 text-xl">The number is {num}</p>
+	<div class="flex gap-2 mb-8 text-2xl">
+		<button on:click={() => (num -= 1)} class="py-2 px-4 bg-orange-600 text-white">-</button>
+		<button on:click={increment} class="py-2 px-4 bg-blue-700 text-white">+</button>
+	</div>
 
 	{#if num === 60}
 		<p>You found the magic number!</p>
